@@ -5,3 +5,7 @@
    chrome: () => process.versions.chrome,
    electron: () => process.versions.electron,
  })
+
+ contextBridge.exposeInMainWorld('ofd', {
+  openfiledialog: () => ipcRenderer.invoke('open_file_dialog'),
+})

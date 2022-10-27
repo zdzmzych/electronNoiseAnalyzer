@@ -9,3 +9,13 @@
 document.getElementById('node-version').innerHTML = versions.node()
 document.getElementById('electron-version').innerHTML = versions.electron()
 document.getElementById('chrome-version').innerHTML = versions.chrome()
+
+const funcOfd = async () => {
+    console.log("start")
+    const response = await window.ofd.openfiledialog()
+    console.log(response)
+    document.getElementById('selected-file').innerHTML = `You selected: ${response}`
+  }
+   
+console.log("hello");
+document.getElementById('open_file').onclick=funcOfd;
